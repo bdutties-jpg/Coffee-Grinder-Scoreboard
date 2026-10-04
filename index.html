@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#09111f" />
+  <meta name="description" content="Live Coffee Grinder Bracket fantasy score timeline." />
+  <title>Coffee Grinder Scoreboard</title>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #eaf2ff;
+      --muted: #a9b9d4;
+      --panel: rgba(17, 29, 51, 0.78);
+      --panel-border: rgba(176, 203, 255, 0.16);
+      --accent: #6ee7d6;
+      --accent-warm: #ffc76d;
+      --shadow: 0 22px 60px rgba(0, 0, 0, 0.34);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 4% 0%, rgba(71, 121, 196, 0.34), transparent 34rem),
+        radial-gradient(circle at 94% 15%, rgba(33, 197, 170, 0.2), transparent 28rem),
+        #09111f;
+    }
+
+    .shell { width: min(1440px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 46px; }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: 0.77rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 20px 0 28px;
+    }
+
+    h1 { margin: 0; font-size: clamp(2rem, 4vw, 3.6rem); letter-spacing: -0.05em; line-height: 1; }
+    .subtitle { max-width: 660px; margin: 14px 0 0; color: var(--muted); font-size: 1.03rem; line-height: 1.55; }
+
+    .refresh-button {
+      appearance: none;
+      border: 1px solid var(--panel-border);
+      border-radius: 999px;
+      padding: 10px 14px;
+      color: var(--ink);
+      background: rgba(18, 34, 58, 0.76);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+    .refresh-button:hover { border-color: var(--accent); background: rgba(35, 65, 101, 0.9); transform: translateY(-1px); }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .is-hidden { display: none !important; }
+
+    .stat-card, .chart-card, .leaderboard-card {
+      border: 1px solid var(--panel-border);
+      border-radius: 20px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .stat-card { min-height: 126px; padding: 18px; }
+    .stat-label { display: block; color: var(--muted); font-size: 0.78rem; font-weight: 750; letter-spacing: 0.1em; text-transform: uppercase; }
+    .stat-value { display: block; margin-top: 9px; color: #fff; font-size: clamp(1.35rem, 2.4vw, 2rem); font-weight: 800; letter-spacing: -0.04em; }
+    .stat-detail { display: block; margin-top: 7px; color: var(--muted); font-size: 0.86rem; }
+
+    .content-grid { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 14px; }
+    .chart-card { position: relative; min-height: 570px; padding: 12px 8px 2px; }
+    #score-chart { width: 100%; min-height: 540px; }
+
+    .chart-tooltip {
+      position: absolute;
+      z-index: 5;
+      display: none;
+      min-width: 170px;
+      max-width: min(280px, calc(100% - 24px));
+      padding: 11px 12px;
+      border: 1px solid rgba(110, 231, 214, 0.36);
+      border-radius: 12px;
+      color: var(--ink);
+      background: rgba(8, 17, 31, 0.96);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.38);
+      font-size: 0.82rem;
+      line-height: 1.45;
+      pointer-events: none;
+    }
+    .chart-tooltip.is-visible { display: block; }
+    .chart-tooltip-heading { display: block; color: #fff; font-weight: 800; }
+    .chart-tooltip-score { display: block; margin-bottom: 7px; color: var(--accent-warm); font-variant-numeric: tabular-nums; font-weight: 750; }
+    .chart-tooltip-owners { margin: 0; padding: 0; list-style: none; }
+    .chart-tooltip-owners li { color: var(--muted); }
+
+    .leaderboard-card { overflow: hidden; }
+    .card-heading { margin: 0; padding: 19px 18px 15px; color: #fff; font-size: 0.95rem; letter-spacing: -0.01em; }
+    .leaderboard { margin: 0; padding: 0 12px 12px; list-style: none; }
+    .leaderboard li { display: grid; grid-template-columns: 30px 1fr auto; gap: 8px; align-items: center; padding: 11px 6px; border-top: 1px solid rgba(176, 203, 255, 0.1); }
+    .rank { color: var(--accent); font-size: 0.77rem; font-weight: 800; }
+    .player { overflow: hidden; color: #fff; font-weight: 720; text-overflow: ellipsis; white-space: nowrap; }
+    .points { color: var(--accent-warm); font-variant-numeric: tabular-nums; font-weight: 800; }
+
+    .status { min-height: 22px; margin: 14px 3px 0; color: var(--muted); font-size: 0.86rem; }
+    .status.error { color: #ffaaa5; }
+
+    .loading {
+      display: grid;
+      min-height: 540px;
+      place-items: center;
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      header { display: block; }
+      .refresh-button { margin-top: 18px; }
+      .content-grid { grid-template-columns: 1fr; }
+      .leaderboard-card { max-width: none; }
+      .leaderboard { display: block; }
+    }
+
+    @media (max-width: 620px) {
+      .shell { width: min(100% - 22px, 1440px); padding-top: 12px; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .chart-card { min-height: 460px; }
+      #score-chart { min-height: 430px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div>
+        <p class="eyebrow">Coffee Grinder Bracket</p>
+        <h1>Fantasy Scoreboard</h1>
+        <p class="subtitle">Cumulative fantasy points, posted after each completed NFL game. Hover a line to inspect the running score; click a name in the legend to focus the field.</p>
+      </div>
+      <button class="refresh-button" id="refresh-button" type="button">↻ Refresh scores</button>
+    </header>
+
+    <!-- Remove is-hidden to restore the summary widgets. -->
+    <section class="stats-grid is-hidden" aria-label="Scoreboard summary">
+      <article class="stat-card">
+        <span class="stat-label">Current leader</span>
+        <strong class="stat-value" id="leader-value">—</strong>
+        <span class="stat-detail" id="leader-detail">Loading score data…</span>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">Latest score event</span>
+        <strong class="stat-value" id="latest-value">—</strong>
+        <span class="stat-detail" id="latest-detail">—</span>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">Score events</span>
+        <strong class="stat-value" id="event-value">—</strong>
+        <span class="stat-detail" id="event-detail">—</span>
+      </article>
+    </section>
+
+    <section class="content-grid" aria-label="Score details">
+      <article class="chart-card">
+        <div id="score-chart" aria-label="Cumulative fantasy score chart">
+          <div class="loading">Loading scoreboard…</div>
+        </div>
+        <div class="chart-tooltip" id="chart-tooltip" role="status" aria-live="polite"></div>
+      </article>
+      <aside class="leaderboard-card">
+        <h2 class="card-heading">Leaderboard</h2>
+        <ol class="leaderboard" id="leaderboard"></ol>
+      </aside>
+    </section>
+
+    <p class="status" id="status" aria-live="polite"></p>
+  </main>
+
+  <script>
+    const DATA_URL = "data/score_timeline.json";
+    const chartElement = document.getElementById("score-chart");
+    const chartTooltipElement = document.getElementById("chart-tooltip");
+    const leaderboardElement = document.getElementById("leaderboard");
+    const statusElement = document.getElementById("status");
+    const numberFormatter = new Intl.NumberFormat("en-US");
+    const dateFormatter = new Intl.DateTimeFormat("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+      hour: "numeric",
+      minute: "2-digit",
+    });
+
+    function asDate(value) {
+      return new Date(value);
+    }
+
+    function renderLeaderboard(totals) {
+      leaderboardElement.innerHTML = "";
+      totals.forEach(([owner, score], index) => {
+        const item = document.createElement("li");
+        item.innerHTML = `
+          <span class="rank">${String(index + 1).padStart(2, "0")}</span>
+          <span class="player">${owner}</span>
+          <span class="points">${numberFormatter.format(score)}</span>
+        `;
+        leaderboardElement.appendChild(item);
+      });
+    }
+
+    function buildTimeline(records) {
+      const eventScores = new Map();
+      const owners = new Set();
+
+      records.forEach((record) => {
+        const score = Number(record.SCORE);
+        const key = `${record.OWNER}\u0000${record.SCORE_DTTM}`;
+        eventScores.set(key, (eventScores.get(key) || 0) + score);
+        owners.add(record.OWNER);
+      });
+
+      const datetimes = [...new Set(records.map((record) => record.SCORE_DTTM))]
+        .sort((left, right) => asDate(left) - asDate(right));
+      const orderedOwners = [...owners].sort((left, right) => left.localeCompare(right));
+      const runningTotals = new Map(orderedOwners.map((owner) => [owner, 0]));
+      const traces = orderedOwners.map((owner) => ({
+        type: "scatter",
+        mode: "lines",
+        name: owner,
+        x: [],
+        y: [],
+        hoverinfo: "none",
+        line: { width: 2.6 },
+      }));
+      const traceByOwner = new Map(traces.map((trace) => [trace.name, trace]));
+
+      datetimes.forEach((datetime) => {
+        orderedOwners.forEach((owner) => {
+          const key = `${owner}\u0000${datetime}`;
+          runningTotals.set(owner, runningTotals.get(owner) + (eventScores.get(key) || 0));
+          const trace = traceByOwner.get(owner);
+          trace.x.push(datetime);
+          trace.y.push(runningTotals.get(owner));
+        });
+      });
+
+      return { datetimes, traces, totals: [...runningTotals.entries()].sort((left, right) => right[1] - left[1]) };
+    }
+
+    function updateSummary(timeline, records) {
+      const [leader, leaderScore] = timeline.totals[0];
+      const latestDatetime = timeline.datetimes.at(-1);
+      const latestEvents = records.filter((record) => record.SCORE_DTTM === latestDatetime);
+      const latestPoints = latestEvents.reduce((total, record) => total + Number(record.SCORE), 0);
+
+      document.getElementById("leader-value").textContent = `${leader} · ${numberFormatter.format(leaderScore)}`;
+      document.getElementById("leader-detail").textContent = "Current cumulative score";
+      document.getElementById("latest-value").textContent = dateFormatter.format(asDate(latestDatetime));
+      document.getElementById("latest-detail").textContent = `${numberFormatter.format(latestPoints)} points awarded across ${latestEvents.length} team rows`;
+      document.getElementById("event-value").textContent = numberFormatter.format(timeline.datetimes.length);
+      document.getElementById("event-detail").textContent = `${numberFormatter.format(records.length)} timestamped team scores`;
+      renderLeaderboard(timeline.totals);
+    }
+
+    function hideChartTooltip() {
+      chartTooltipElement.classList.remove("is-visible");
+    }
+
+    function showChartTooltip(event) {
+      const point = event.points?.[0];
+      if (!point) {
+        return;
+      }
+
+      const intersectingTraces = (chartElement.data || []).filter((trace) =>
+        Number(trace.y[point.pointIndex]) === Number(point.y)
+      );
+      const ownerItems = intersectingTraces
+        .map((trace) => `<li>${trace.name}</li>`)
+        .join("");
+      chartTooltipElement.innerHTML = `
+        <span class="chart-tooltip-heading">${dateFormatter.format(asDate(point.x))}</span>
+        <span class="chart-tooltip-score">${numberFormatter.format(point.y)} points</span>
+        <ul class="chart-tooltip-owners">${ownerItems}</ul>
+      `;
+      chartTooltipElement.classList.add("is-visible");
+
+      const chartCard = chartElement.closest(".chart-card");
+      const chartBounds = chartCard.getBoundingClientRect();
+      const pointer = event.event;
+      const pointerX = pointer?.clientX ?? chartBounds.left + chartBounds.width / 2;
+      const pointerY = pointer?.clientY ?? chartBounds.top + chartBounds.height / 2;
+      const offset = 14;
+      const rightAlignedLeft = pointerX - chartBounds.left - chartTooltipElement.offsetWidth - offset;
+      const left = Math.min(
+        chartCard.clientWidth - chartTooltipElement.offsetWidth - 12,
+        Math.max(12, rightAlignedLeft)
+      );
+      const top = Math.min(
+        chartCard.clientHeight - chartTooltipElement.offsetHeight - 12,
+        Math.max(12, pointerY - chartBounds.top + offset)
+      );
+      chartTooltipElement.style.left = `${left}px`;
+      chartTooltipElement.style.top = `${top}px`;
+    }
+
+    function renderChart(timeline) {
+      Plotly.react(chartElement, timeline.traces, {
+        autosize: true,
+        margin: { l: 58, r: 24, t: 30, b: 64 },
+        paper_bgcolor: "rgba(0, 0, 0, 0)",
+        plot_bgcolor: "rgba(9, 17, 31, 0.2)",
+        font: { color: "#d9e7ff", family: "Inter, ui-sans-serif, system-ui, sans-serif" },
+        hovermode: "closest",
+        legend: { orientation: "h", yanchor: "bottom", y: 1.02, xanchor: "left", x: 0, font: { size: 11 } },
+        xaxis: {
+          type: "category",
+          title: { text: "Game scoring events", standoff: 16 },
+          tickmode: "array",
+          tickvals: timeline.datetimes,
+          showticklabels: false,
+          showgrid: true,
+          gridcolor: "rgba(160, 191, 238, 0.12)",
+          ticks: "outside",
+          ticklen: 5,
+          tickcolor: "rgba(160, 191, 238, 0.45)",
+          linecolor: "rgba(160, 191, 238, 0.3)",
+          zeroline: false,
+        },
+        yaxis: {
+          title: { text: "Cumulative fantasy points", standoff: 14 },
+          gridcolor: "rgba(160, 191, 238, 0.12)",
+          linecolor: "rgba(160, 191, 238, 0.3)",
+          rangemode: "tozero",
+          zeroline: false,
+        },
+      }, {
+        displaylogo: false,
+        responsive: true,
+        modeBarButtonsToRemove: ["lasso2d", "select2d"],
+      }).then(() => {
+        chartElement.removeAllListeners("plotly_hover");
+        chartElement.removeAllListeners("plotly_unhover");
+        chartElement.on("plotly_hover", showChartTooltip);
+        chartElement.on("plotly_unhover", hideChartTooltip);
+      });
+    }
+
+    async function loadDashboard() {
+      statusElement.className = "status";
+      statusElement.textContent = "Loading score timeline…";
+      try {
+        const response = await fetch(`${DATA_URL}?updated=${Date.now()}`, { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error(`Score data returned ${response.status}`);
+        }
+
+        const records = await response.json();
+        if (!Array.isArray(records) || records.length === 0) {
+          throw new Error("Score data contains no events yet.");
+        }
+
+        const timeline = buildTimeline(records);
+        renderChart(timeline);
+        updateSummary(timeline, records);
+        statusElement.textContent = `Showing ${numberFormatter.format(records.length)} team scores through ${dateFormatter.format(asDate(timeline.datetimes.at(-1)))}.`;
+      } catch (error) {
+        chartElement.innerHTML = `<div class="loading">Unable to load score data.</div>`;
+        statusElement.className = "status error";
+        statusElement.textContent = `${error.message}. Run the scorer to publish a fresh timeline.`;
+      }
+    }
+
+    document.getElementById("refresh-button").addEventListener("click", loadDashboard);
+    loadDashboard();
+  </script>
+</body>
+</html>
