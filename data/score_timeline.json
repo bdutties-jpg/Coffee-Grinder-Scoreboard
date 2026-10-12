@@ -720,6 +720,42 @@
     "IS_FINAL":false
   },
   {
+    "OWNER":"Brandon Dutton",
+    "TEAM":"IND",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Brandon Dutton",
+    "TEAM":"MIA",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Brandon Dutton",
+    "TEAM":"WAS",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":16,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Brandon Dutton",
+    "TEAM":"ARI",
+    "SCORE_DTTM":"2026-10-11T20:20:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
     "OWNER":"Colin Freidel",
     "TEAM":"BAL",
     "SCORE_DTTM":"2026-09-20T13:00:00.000",
@@ -1440,6 +1476,42 @@
     "IS_FINAL":false
   },
   {
+    "OWNER":"Colin Freidel",
+    "TEAM":"IND",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Colin Freidel",
+    "TEAM":"MIA",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":16,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Colin Freidel",
+    "TEAM":"WAS",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Colin Freidel",
+    "TEAM":"ARI",
+    "SCORE_DTTM":"2026-10-11T20:20:00.000",
+    "SCORE":16,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
     "OWNER":"Derick Melotte",
     "TEAM":"BAL",
     "SCORE_DTTM":"2026-09-20T13:00:00.000",
@@ -2160,6 +2232,42 @@
     "IS_FINAL":false
   },
   {
+    "OWNER":"Derick Melotte",
+    "TEAM":"IND",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Derick Melotte",
+    "TEAM":"MIA",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Derick Melotte",
+    "TEAM":"WAS",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Derick Melotte",
+    "TEAM":"ARI",
+    "SCORE_DTTM":"2026-10-11T20:20:00.000",
+    "SCORE":16,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
     "OWNER":"Eric Trempe",
     "TEAM":"BAL",
     "SCORE_DTTM":"2026-09-20T13:00:00.000",
@@ -2880,6 +2988,42 @@
     "IS_FINAL":false
   },
   {
+    "OWNER":"Eric Trempe",
+    "TEAM":"IND",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Eric Trempe",
+    "TEAM":"MIA",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Eric Trempe",
+    "TEAM":"WAS",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Eric Trempe",
+    "TEAM":"ARI",
+    "SCORE_DTTM":"2026-10-11T20:20:00.000",
+    "SCORE":16,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
     "OWNER":"James Olson",
     "TEAM":"BAL",
     "SCORE_DTTM":"2026-09-20T13:00:00.000",
@@ -3600,6 +3744,42 @@
     "IS_FINAL":false
   },
   {
+    "OWNER":"James Olson",
+    "TEAM":"IND",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"James Olson",
+    "TEAM":"MIA",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"James Olson",
+    "TEAM":"WAS",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"James Olson",
+    "TEAM":"ARI",
+    "SCORE_DTTM":"2026-10-11T20:20:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
     "OWNER":"Jesus Revilla",
     "TEAM":"BAL",
     "SCORE_DTTM":"2026-09-20T13:00:00.000",
@@ -4320,6 +4500,42 @@
     "IS_FINAL":false
   },
   {
+    "OWNER":"Jesus Revilla",
+    "TEAM":"IND",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Jesus Revilla",
+    "TEAM":"MIA",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Jesus Revilla",
+    "TEAM":"WAS",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Jesus Revilla",
+    "TEAM":"ARI",
+    "SCORE_DTTM":"2026-10-11T20:20:00.000",
+    "SCORE":16,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
     "OWNER":"Jolene Knoll",
     "TEAM":"BAL",
     "SCORE_DTTM":"2026-09-20T13:00:00.000",
@@ -5040,6 +5256,42 @@
     "IS_FINAL":false
   },
   {
+    "OWNER":"Jolene Knoll",
+    "TEAM":"IND",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Jolene Knoll",
+    "TEAM":"MIA",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Jolene Knoll",
+    "TEAM":"WAS",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Jolene Knoll",
+    "TEAM":"ARI",
+    "SCORE_DTTM":"2026-10-11T20:20:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
     "OWNER":"Katie Sturz",
     "TEAM":"BAL",
     "SCORE_DTTM":"2026-09-20T13:00:00.000",
@@ -5760,6 +6012,42 @@
     "IS_FINAL":false
   },
   {
+    "OWNER":"Katie Sturz",
+    "TEAM":"IND",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Katie Sturz",
+    "TEAM":"MIA",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Katie Sturz",
+    "TEAM":"WAS",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Katie Sturz",
+    "TEAM":"ARI",
+    "SCORE_DTTM":"2026-10-11T20:20:00.000",
+    "SCORE":16,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
     "OWNER":"Kendall Sontag",
     "TEAM":"BAL",
     "SCORE_DTTM":"2026-09-20T13:00:00.000",
@@ -6480,6 +6768,42 @@
     "IS_FINAL":false
   },
   {
+    "OWNER":"Kendall Sontag",
+    "TEAM":"IND",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Kendall Sontag",
+    "TEAM":"MIA",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Kendall Sontag",
+    "TEAM":"WAS",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Kendall Sontag",
+    "TEAM":"ARI",
+    "SCORE_DTTM":"2026-10-11T20:20:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
     "OWNER":"Luis Coffee",
     "TEAM":"BAL",
     "SCORE_DTTM":"2026-09-20T13:00:00.000",
@@ -7200,6 +7524,42 @@
     "IS_FINAL":false
   },
   {
+    "OWNER":"Luis Coffee",
+    "TEAM":"IND",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Luis Coffee",
+    "TEAM":"MIA",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Luis Coffee",
+    "TEAM":"WAS",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":16,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Luis Coffee",
+    "TEAM":"ARI",
+    "SCORE_DTTM":"2026-10-11T20:20:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
     "OWNER":"Matthew Zeimer",
     "TEAM":"BAL",
     "SCORE_DTTM":"2026-09-20T13:00:00.000",
@@ -7920,6 +8280,42 @@
     "IS_FINAL":false
   },
   {
+    "OWNER":"Matthew Zeimer",
+    "TEAM":"IND",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Matthew Zeimer",
+    "TEAM":"MIA",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Matthew Zeimer",
+    "TEAM":"WAS",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Matthew Zeimer",
+    "TEAM":"ARI",
+    "SCORE_DTTM":"2026-10-11T20:20:00.000",
+    "SCORE":16,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
     "OWNER":"Nikhil Arora",
     "TEAM":"BAL",
     "SCORE_DTTM":"2026-09-20T13:00:00.000",
@@ -8640,6 +9036,42 @@
     "IS_FINAL":false
   },
   {
+    "OWNER":"Nikhil Arora",
+    "TEAM":"IND",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Nikhil Arora",
+    "TEAM":"MIA",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":16,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Nikhil Arora",
+    "TEAM":"WAS",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Nikhil Arora",
+    "TEAM":"ARI",
+    "SCORE_DTTM":"2026-10-11T20:20:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
     "OWNER":"Rob Valentyne",
     "TEAM":"BAL",
     "SCORE_DTTM":"2026-09-20T13:00:00.000",
@@ -9360,6 +9792,42 @@
     "IS_FINAL":false
   },
   {
+    "OWNER":"Rob Valentyne",
+    "TEAM":"IND",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Rob Valentyne",
+    "TEAM":"MIA",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Rob Valentyne",
+    "TEAM":"WAS",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":16,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Rob Valentyne",
+    "TEAM":"ARI",
+    "SCORE_DTTM":"2026-10-11T20:20:00.000",
+    "SCORE":16,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
     "OWNER":"Scott Bonfigt",
     "TEAM":"BAL",
     "SCORE_DTTM":"2026-09-20T13:00:00.000",
@@ -10077,6 +10545,42 @@
     "SCORE":0,
     "CHUNK_START_WEEK":4,
     "CHUNK_END_WEEK":4,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Scott Bonfigt",
+    "TEAM":"IND",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Scott Bonfigt",
+    "TEAM":"MIA",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Scott Bonfigt",
+    "TEAM":"WAS",
+    "SCORE_DTTM":"2026-10-11T13:00:00.000",
+    "SCORE":0,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
+    "IS_FINAL":false
+  },
+  {
+    "OWNER":"Scott Bonfigt",
+    "TEAM":"ARI",
+    "SCORE_DTTM":"2026-10-11T20:20:00.000",
+    "SCORE":16,
+    "CHUNK_START_WEEK":5,
+    "CHUNK_END_WEEK":8,
     "IS_FINAL":false
   }
 ]
